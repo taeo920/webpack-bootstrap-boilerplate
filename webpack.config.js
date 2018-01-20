@@ -10,8 +10,7 @@ module.exports = {
 		'scripts': './scripts/scripts.js',
 		'styles': './styles/styles.scss',
 		'admin-scripts': './scripts/admin.js',
-		'admin-styles': './styles/admin.scss',
-		'editor-styles': './styles/editor.scss'
+		'admin-styles': './styles/admin.scss'
 	},
 	plugins: [
 		new extract({
@@ -31,11 +30,15 @@ module.exports = {
 		filename: '[name].min.js',
 		path: path.resolve(__dirname, 'dist/scripts')
 	},
-	externals: {
-		jquery: '$'
-	},
 	module: {
 		rules: [
+			{
+				test: require.resolve('jquery'),
+				use: [
+					{ loader: 'expose-loader', options: 'jQuery' },
+					{ loader: 'expose-loader', options: '$' }
+				]
+			},
 			{
 				test: /\.js$/,
 				exclude: /(node_modules|bower_components)/,
@@ -49,18 +52,18 @@ module.exports = {
 			{
 				test: /\.scss$/,
 				use: extract.extract({
-					use: [{
-						loader: 'css-loader',
-						options: {
-							minimize: true,
-							sourceMap: true,
-							url: false
-						}
-					} , {
-						loader: 'postcss-loader'
-					} , {
-						loader: 'sass-loader'
-					}]
+					use: [
+						{
+							loader: 'css-loader',
+							options: {
+								minimize: true,
+								sourceMap: true,
+								url: false
+							}
+						},
+						{ loader: 'postcss-loader' },
+						{ loader: 'sass-loader' }
+					]
 				})
 			}
 		]

@@ -7,10 +7,10 @@
 @import "~bootstrap/scss/root";
 @import "~bootstrap/scss/reboot";
 @import "~bootstrap/scss/grid";
-@import "~bootstrap/scss/carousel";
 @import "~bootstrap/scss/utilities";
 
 /**
  * Components
  */
-@import "components/button";
+@import "components/carousel";
+@import "components/header";
