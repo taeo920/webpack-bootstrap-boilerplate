@@ -21,6 +21,7 @@
         "autoprefixer": "^7.2.5",
         "postcss-loader": "^2.0.10",
         "postcss-import": "^11.0.0",
+        "postcss-import-url": "^3.0.4",
         "postcss-url": "^7.3.0"
     },
     "dependencies": {
