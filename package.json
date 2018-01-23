@@ -12,6 +12,7 @@
         "babel-preset-env": "^1.6.1",
         "uglifyjs-webpack-plugin": "^1.1.6",
         "css-loader": "^0.28.8",
+        "file-loader": "^1.1.6",
         "node-sass": "^4.7.2",
         "sass-loader": "^6.0.6",
         "extract-text-webpack-plugin": "^3.0.2",
@@ -19,9 +20,7 @@
         "expose-loader": "^0.7.4",
         "webpack-extraneous-file-cleanup-plugin": "^1.0.5",
         "autoprefixer": "^7.2.5",
-        "postcss-loader": "^2.0.10",
-        "postcss-import": "^11.0.0",
-        "postcss-url": "^7.3.0"
+        "postcss-loader": "^2.0.10"
     },
     "dependencies": {
         "bootstrap": "^4.0.0-beta.3",

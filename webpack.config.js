@@ -65,7 +65,23 @@ module.exports = {
 						{ loader: 'sass-loader' }
 					]
 				})
-			}
+			},
+	        {
+				test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+				include: /(fonts|node_modules)/,
+				loader: 'file-loader',
+				options: {
+					name: '../fonts/[name].[ext]'
+				}
+	        },
+	        {
+	        	test: /\.(png|jpg|jpeg|gif|ico|svg)$/,
+	        	include: /images/,
+	        	loader: 'file-loader',
+				options: {
+					name: '../images/[name].[ext]'
+				}
+	        }
 		]
 	}
 };
